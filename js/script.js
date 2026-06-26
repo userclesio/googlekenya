@@ -188,9 +188,9 @@ function loadVSLPlayer() {
     // Limpa qualquer conteúdo anterior
     playerContainer.innerHTML = '';
     // Insere o player VTurb conforme solicitado
-    playerContainer.innerHTML = '<vturb-smartplayer id="vid-6a3b1de098c7a8a7e98fd649" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>';
+    playerContainer.innerHTML = '<vturb-smartplayer id="ab-6a3ec89233aff91765440892" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>';
     var s = document.createElement("script");
-    s.src = "https://scripts.converteai.net/f0ada385-6eec-4f29-9366-31cd3b1a8fb6/players/6a3b1de098c7a8a7e98fd649/v4/player.js";
+    s.src = "https://scripts.converteai.net/f0ada385-6eec-4f29-9366-31cd3b1a8fb6/ab-test/6a3ec89233aff91765440892/player.js";
     s.async = !0;
     document.head.appendChild(s);
     window.vslPlayerLoaded = true;
