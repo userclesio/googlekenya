@@ -188,9 +188,9 @@ function loadVSLPlayer() {
     // Limpa qualquer conteúdo anterior
     playerContainer.innerHTML = '';
     // Insere o player VTurb conforme solicitado
-    playerContainer.innerHTML = '<kilax-smartplayer id="vid-432t6tJFTC3jVK6a4566ef5eace" style="display: block; margin: 0 auto; width: 100%;"><div data-kilax-ratio="133.33%" style="position: relative; width: 100%; padding: 133.33% 0 0; z-index: 0;"></div></kilax-smartplayer>';
+    playerContainer.innerHTML = '<vturb-smartplayer id="vid-6a3ec5ae456629755748b781" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 133.33333333333331% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>';
     var s = document.createElement("script");
-    s.src = "https://dash.kilax.app/kilax-embed.js";
+    s.src = "https://scripts.converteai.net/f0ada385-6eec-4f29-9366-31cd3b1a8fb6/players/6a3ec5ae456629755748b781/v4/player.js";
     s.async = !0;
     document.head.appendChild(s);
     window.vslPlayerLoaded = true;
