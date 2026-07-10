@@ -68,6 +68,13 @@ const surveyData = {
 const quizSection = document.getElementById('quizSection');
 const vslSection = document.getElementById('vslSection');
 
+// Página de verificação de idade
+const agePage = document.getElementById('agePage');
+const ageButtons = document.getElementById('ageButtons');
+const ageConfirmYes = document.getElementById('ageConfirmYes');
+const ageConfirmNo = document.getElementById('ageConfirmNo');
+const ageDeniedMessage = document.getElementById('ageDeniedMessage');
+
 // Páginas do Quiz
 const welcomePage = document.getElementById('welcomePage');
 const surveyPage = document.getElementById('surveyPage');
@@ -112,7 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adicionar event listeners
     startButton.addEventListener('click', startSurvey);
     withdrawButton.addEventListener('click', showVSL);
+    ageConfirmYes.addEventListener('click', confirmAge);
+    ageConfirmNo.addEventListener('click', denyAge);
 });
+
+/**
+ * Confirma que o usuário tem 18 anos ou mais e libera o fluxo
+ */
+function confirmAge() {
+    fadeOut(agePage, () => {
+        fadeIn(welcomePage);
+    });
+}
+
+/**
+ * Bloqueia o fluxo para usuários menores de 18 anos
+ */
+function denyAge() {
+    ageButtons.classList.add('hidden');
+    ageDeniedMessage.classList.remove('hidden');
+}
 
 /**
  * Mostra a VSL e carrega o player

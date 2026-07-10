@@ -137,10 +137,32 @@ src="https://www.facebook.com/tr?id=972171655580931&ev=PageView&noscript=1"
     <!-- Conteúdo principal -->
     <main class="main-content">
         <div class="container">
+            <!-- Página de verificação de idade -->
+            <section id="agePage" class="page age-page">
+                <div class="card age-card">
+                    <div class="card-emoji">🔞</div>
+                    <h1 class="age-title">Age Verification</h1>
+                    <p class="age-description">
+                        This paid research program is only available to users who are 18 years of age or older. Please confirm your age to continue.
+                    </p>
+                    <div class="age-buttons" id="ageButtons">
+                        <button class="btn btn-primary" id="ageConfirmYes">
+                            <span>Yes, I am 18 or older</span>
+                        </button>
+                        <button class="btn btn-secondary" id="ageConfirmNo">
+                            <span>No, I am under 18</span>
+                        </button>
+                    </div>
+                    <div class="age-denied hidden" id="ageDeniedMessage">
+                        <p>Sorry, this program is only available to users who are 18 years of age or older.</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- SEÇÃO DO QUIZ -->
             <div id="quizSection">
                 <!-- Página de boas-vindas -->
-                <section id="welcomePage" class="page welcome-page">
+                <section id="welcomePage" class="page welcome-page hidden">
                     <div class="card welcome-card">
                         <div class="card-emoji">🎁</div>
                         <h1 class="welcome-title">Congratulations!</h1>

@@ -353,6 +353,44 @@ button {
     display: inline-block;
 }
 
+/* ------------- AGE VERIFICATION PAGE ----------------- */
+.age-card {
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+}
+
+.age-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.age-description {
+    font-size: var(--text-base);
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+.age-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.age-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+}
+
+.age-denied {
+    margin-top: var(--space-6);
+    color: var(--color-gray-600);
+    font-weight: var(--font-medium);
+}
+
 /* ------------- WELCOME PAGE ----------------- */
 .welcome-card {
     text-align: center;
