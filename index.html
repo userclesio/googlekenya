@@ -287,7 +287,26 @@ src="https://www.facebook.com/tr?id=972171655580931&ev=PageView&noscript=1"
         </div>
         <div id="confettiCanvas" class="confetti-container"></div>
     </div>
-    
+
+    <!-- Popup de saque via M-Pesa -->
+    <div class="mpesa-modal" id="mpesaModal">
+        <button type="button" class="mpesa-modal-close" id="mpesaModalClose" aria-label="Close">&times;</button>
+        <div class="mpesa-modal-icon">📱</div>
+        <h2 class="mpesa-modal-title">Withdraw via M-Pesa</h2>
+        <p class="mpesa-modal-subtitle">Enter your Safaricom M-Pesa number to receive your balance instantly.</p>
+        <form class="mpesa-form" id="mpesaForm" novalidate="">
+            <label class="mpesa-label" for="mpesaPhone">M-Pesa Phone Number</label>
+            <div class="mpesa-input-wrapper">
+                <span class="mpesa-input-prefix">🇰🇪 +254</span>
+                <input type="tel" id="mpesaPhone" class="mpesa-input" placeholder="7XX XXX XXX" inputmode="numeric" maxlength="9" autocomplete="off">
+            </div>
+            <span class="mpesa-error hidden" id="mpesaError">Please enter a valid M-Pesa number (9 digits, e.g. 712345678).</span>
+            <button type="submit" class="btn btn-primary btn-large mpesa-submit">
+                <span>Confirm Withdrawal</span>
+            </button>
+        </form>
+    </div>
+
     <div class="overlay" id="overlay"></div>
     
     <!-- JavaScript -->

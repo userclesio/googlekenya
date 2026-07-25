@@ -97,6 +97,13 @@ const rewardPopup = document.getElementById('rewardPopup');
 const rewardAmount = document.getElementById('rewardAmount');
 const overlay = document.getElementById('overlay');
 
+// Popup de saque via M-Pesa
+const mpesaModal = document.getElementById('mpesaModal');
+const mpesaModalClose = document.getElementById('mpesaModalClose');
+const mpesaForm = document.getElementById('mpesaForm');
+const mpesaPhone = document.getElementById('mpesaPhone');
+const mpesaError = document.getElementById('mpesaError');
+
 // Botões
 const startButton = document.getElementById('startButton');
 const withdrawButton = document.getElementById('withdrawButton');
@@ -118,10 +125,55 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Adicionar event listeners
     startButton.addEventListener('click', startSurvey);
-    withdrawButton.addEventListener('click', showVSL);
+    withdrawButton.addEventListener('click', showMpesaModal);
     ageConfirmYes.addEventListener('click', confirmAge);
     ageConfirmNo.addEventListener('click', denyAge);
+    mpesaModalClose.addEventListener('click', hideMpesaModal);
+    mpesaForm.addEventListener('submit', handleMpesaSubmit);
+    overlay.addEventListener('click', () => {
+        if (mpesaModal.classList.contains('active')) {
+            hideMpesaModal();
+        }
+    });
 });
+
+// ==================== POPUP DE SAQUE M-PESA ====================
+
+/**
+ * Mostra o popup para o usuário informar o número M-Pesa
+ */
+function showMpesaModal() {
+    overlay.classList.add('active');
+    mpesaModal.classList.add('active');
+    mpesaPhone.focus();
+}
+
+/**
+ * Esconde o popup de saque via M-Pesa
+ */
+function hideMpesaModal() {
+    overlay.classList.remove('active');
+    mpesaModal.classList.remove('active');
+}
+
+/**
+ * Valida o número M-Pesa informado e avança para a VSL
+ */
+function handleMpesaSubmit(event) {
+    event.preventDefault();
+
+    const digitsOnly = mpesaPhone.value.trim().replace(/\D/g, '');
+    const isValid = /^[0-9]{9}$/.test(digitsOnly);
+
+    if (!isValid) {
+        mpesaError.classList.remove('hidden');
+        return;
+    }
+
+    mpesaError.classList.add('hidden');
+    hideMpesaModal();
+    showVSL();
+}
 
 /**
  * Confirma que o usuário tem 18 anos ou mais e libera o fluxo

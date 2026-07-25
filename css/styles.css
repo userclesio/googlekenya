@@ -756,6 +756,126 @@ button {
     color: var(--color-gray-600);
 }
 
+/* ------------- M-PESA WITHDRAW MODAL ----------------- */
+.mpesa-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: var(--z-50);
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-xl);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    width: 90%;
+    max-width: 420px;
+}
+
+.mpesa-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.mpesa-modal-close {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background: var(--color-gray-50);
+    color: var(--color-gray-600);
+    font-size: var(--text-xl);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-normal);
+}
+
+.mpesa-modal-close:hover {
+    background: var(--color-gray-100);
+}
+
+.mpesa-modal-icon {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.mpesa-modal-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.mpesa-modal-subtitle {
+    font-size: var(--text-base);
+    color: var(--color-gray-600);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.mpesa-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.mpesa-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-2);
+}
+
+.mpesa-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    transition: border-color var(--transition-normal);
+}
+
+.mpesa-input-wrapper:focus-within {
+    border-color: var(--color-primary);
+}
+
+.mpesa-input-prefix {
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-700);
+    white-space: nowrap;
+}
+
+.mpesa-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    font-size: var(--text-base);
+    font-family: inherit;
+    color: var(--color-gray-900);
+}
+
+.mpesa-error {
+    display: block;
+    color: var(--color-error, #E53E3E);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+}
+
+.mpesa-submit {
+    width: 100%;
+    margin-top: var(--space-6);
+}
+
 .confetti-container {
     position: absolute;
     top: 0;
